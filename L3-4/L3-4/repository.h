@@ -6,9 +6,5 @@
 //  Copyright © 2016 Dehelean Andrei. All rights reserved.
 //
 
-#ifndef repository_h
-#define repository_h
-
+#pragma once
 #include <stdio.h>
-
-#endif /* repository_h */
