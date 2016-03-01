@@ -1,10 +1,11 @@
-//  Created by Dehelean Andrei on 2/23/16.
+//  Created by Dehelean Andrei on 2/23/16. with XCODE
 
-
+#include <string.h>
 #include <stdio.h>
 
-int readVal( int n){
-    printf("Give a number: ");
+int readVal(const char* message){
+    int n;
+    printf(message);
     scanf("%d", &n);
     return n;
 }
@@ -19,7 +20,7 @@ void pascaltriangle()
      */
     unsigned int c, i, j, k;
     unsigned int n;
-    n = readVal(n);
+    n = readVal("Give a number: ");
     for(i=0; i < n; i++) {
         c = 1;
         for(j=1; j <= 2*(n-1-i); j++)
@@ -44,14 +45,15 @@ typedef struct{
 
 /*
  Function which reads a vector from the standard input
+ input : elements (integer)
+ output : the vector containing those elements
  */
 
 vector readVector(){
     vector v;
     int n;
     v.size = 0;
-    printf("Start inputing elements, type 0 to end\n");
-    scanf("%d", &n);
+    n = readVal("Start inputing elements, type 0 to end\n");
     while(n!=0){
         v.arr[v.size++] = n;
         scanf("%d", &n);
@@ -75,7 +77,7 @@ void printVector(vector v){
  Function which checks is a number is prime
  input  - n (integer)
  output - 1 if it is prime
- 0 if it is not prime
+          0 if it is not prime
  */
 int prime(unsigned int n) {
     unsigned int i;
@@ -90,6 +92,8 @@ int prime(unsigned int n) {
 /*
  Function which returns a vector containing the longest contiguous subsequence of vector v
  which contains prime numbers
+ input : vector
+ output : vector containing the longest contiguous subsequence of prime numbers
  */
 
 vector sequence(vector v){
@@ -136,8 +140,7 @@ int main()
     int ok = 1;
     while(ok == 1){
         menu();
-        printf("Enter an option: ");
-        scanf("%d", &cmd);
+        cmd = readVal("Give a command: ");
         switch (cmd) {
             case 0:
             {
