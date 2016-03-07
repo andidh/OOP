@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99522FDE1C8752760012F942 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 99522FDC1C8752760012F942 /* utils.c */; };
 		99C397CF1C856E7E00376DEB /* domain.c in Sources */ = {isa = PBXBuildFile; fileRef = 99C397CE1C856E7E00376DEB /* domain.c */; };
 		99C397D91C857A1700376DEB /* repository.c in Sources */ = {isa = PBXBuildFile; fileRef = 99C397D71C857A1700376DEB /* repository.c */; };
+		99CA2A371C877C090077721C /* controller.c in Sources */ = {isa = PBXBuildFile; fileRef = 99CA2A351C877C090077721C /* controller.c */; };
+		99CA2A3A1C8780750077721C /* UI.c in Sources */ = {isa = PBXBuildFile; fileRef = 99CA2A381C8780750077721C /* UI.c */; };
+		99DA0B7E1C8881890072D126 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 99DA0B7C1C8881890072D126 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,11 +28,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		99522FDC1C8752760012F942 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		99522FDD1C8752760012F942 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		99C397CB1C856E7E00376DEB /* L3-4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "L3-4"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C397CE1C856E7E00376DEB /* domain.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = domain.c; sourceTree = "<group>"; };
 		99C397D51C8570E300376DEB /* domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = domain.h; sourceTree = "<group>"; };
 		99C397D71C857A1700376DEB /* repository.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = repository.c; sourceTree = "<group>"; };
 		99C397D81C857A1700376DEB /* repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = repository.h; sourceTree = "<group>"; };
+		99CA2A351C877C090077721C /* controller.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = controller.c; sourceTree = "<group>"; };
+		99CA2A361C877C090077721C /* controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controller.h; sourceTree = "<group>"; };
+		99CA2A381C8780750077721C /* UI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = UI.c; sourceTree = "<group>"; };
+		99CA2A391C8780750077721C /* UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
+		99DA0B7C1C8881890072D126 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		99DA0B7D1C8881890072D126 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,14 @@
 				99C397D51C8570E300376DEB /* domain.h */,
 				99C397D71C857A1700376DEB /* repository.c */,
 				99C397D81C857A1700376DEB /* repository.h */,
+				99CA2A351C877C090077721C /* controller.c */,
+				99CA2A361C877C090077721C /* controller.h */,
+				99522FDC1C8752760012F942 /* utils.c */,
+				99522FDD1C8752760012F942 /* utils.h */,
+				99CA2A381C8780750077721C /* UI.c */,
+				99CA2A391C8780750077721C /* UI.h */,
+				99DA0B7C1C8881890072D126 /* main.c */,
+				99DA0B7D1C8881890072D126 /* main.h */,
 			);
 			path = "L3-4";
 			sourceTree = "<group>";
@@ -125,6 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99522FDE1C8752760012F942 /* utils.c in Sources */,
+				99CA2A3A1C8780750077721C /* UI.c in Sources */,
+				99DA0B7E1C8881890072D126 /* main.c in Sources */,
+				99CA2A371C877C090077721C /* controller.c in Sources */,
 				99C397CF1C856E7E00376DEB /* domain.c in Sources */,
 				99C397D91C857A1700376DEB /* repository.c in Sources */,
 			);
@@ -245,6 +269,7 @@
 				99C397D41C856E7E00376DEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

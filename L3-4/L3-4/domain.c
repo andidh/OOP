@@ -6,33 +6,40 @@
 #include <string.h>
 #include <stdlib.h>
 #include "domain.h"
+#include <time.h>
 
-Product* new_product(const char* name, const char* supplier, int quantity, const char* date){
-    Product* prod = malloc(sizeof *prod);
+void new_product(Product* prod,char* name, char* supplier, float quantity, p_time date){
+    
+    if(!prod){
+        printf("Product is NULL");
+        return;
+    }
     prod -> name = malloc(sizeof(*name));
     strcpy(prod -> name, name);
     prod -> supplier = malloc(sizeof(*supplier));
     strcpy(prod -> supplier, supplier);
-    prod -> date = malloc(sizeof(*date));
-    strcpy(prod->date, date);
+    prod -> date = date;
     prod -> quantity = quantity;
-    return prod;
 }
 
 void destroy_product(Product* prod){
-    free(prod);
+    if(!prod){
+        printf("Product is NULL");
+    }
     free(prod->name);
+    prod->name = NULL;
+    
     free(prod->supplier);
-    free(prod->date);
+    prod->supplier = NULL;
+    
+    prod->quantity = -1;
+    
 }
 
 int equal_prod(Product* prod1, Product* prod2){
     return prod1->name == prod2->name;
 }
 
-void print_prod(Product* prod){
-    printf("%s %s %d %s \n", prod->name, prod->supplier, prod->quantity, prod->date);
-}
 
 
 char* getName(Product* prod){
@@ -47,33 +54,37 @@ int getQuant(Product* prod){
     return prod->quantity;
 }
 
-char* getDate(Product* prod){
+p_time getDate(Product* prod){
     return prod->date;
 }
 
-void setName(Product* prod, const char* name){
-    prod -> name = malloc(sizeof(char)*(strlen(name)+ 1));
-    strcpy(prod -> name, name);
-}
-
-void setDate(Product* prod, const char* date){
-    prod -> date = malloc(sizeof(char) * (strlen(date) +1));
-    strcpy(prod->date, date);
-}
-
-void setSupplier(Product* prod, const char* supplier){
-    prod -> supplier = malloc(sizeof(char)*(strlen(supplier) + 1));
-    strcpy(prod -> supplier, supplier);
-}
-
-void setQuantity(Product* prod, int quantity){
-    prod -> quantity = quantity;
-}
-
-int main() {
+int Expiration(Product *prod) {
+    time_t raw_time;
+    p_time tmp;
+    time ( &raw_time );
+    tmp = *gmtime ( &raw_time );
+    time_t start_time, end_time;
+    double seconds;
     
-    Product* p;
-    p = new_product("Bread", "Ali", 100, "Monday");
-    print_prod(p);
+    p_time exp = prod->date;
+    
+    exp.tm_hour = 0;
+    exp.tm_min = 0;
+    exp.tm_sec = 0;
+    exp.tm_year -= 1900;
+    exp.tm_mon -= 1;
+    
+    tmp.tm_hour = 0;
+    tmp.tm_min = 0;
+    tmp.tm_sec = 0;
+    
+    start_time = mktime(&exp);
+    end_time = mktime(&tmp);
+    
+    seconds = difftime(start_time, end_time);
+    
+    if(seconds < 0)
+        return 1;
     return 0;
 }
+

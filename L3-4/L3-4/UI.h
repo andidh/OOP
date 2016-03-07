@@ -6,9 +6,26 @@
 //  Copyright © 2016 Dehelean Andrei. All rights reserved.
 //
 
-#ifndef UI_h
-#define UI_h
+#pragma once
+#include "controller.h"
 
-#include <stdio.h>
+typedef struct{
+    Contr* contr;
+}UI;
 
-#endif /* UI_h */
+
+void ui_init(UI* u,Contr* c);
+
+void ui_destroy(UI* c);
+
+int ui__getInteger(const char *message);
+
+float ui__getDouble(const char *message);
+
+void ui__getString(char *s, const char *message);
+
+void ui__printMenu();
+
+void ui_add(UI *ui, int readName, int readSupplier, int readQuantity, int readTime);
+
+void run(UI *self) ;

@@ -6,9 +6,19 @@
 //  Copyright © 2016 Dehelean Andrei. All rights reserved.
 //
 
-#ifndef controller_h
-#define controller_h
+#pragma once
 
 #include <stdio.h>
+#include "repository.h"
 
-#endif /* controller_h */
+
+typedef struct{
+    Repo* repo;
+}Contr;
+
+void contr_init(Contr* c, Repo* r);
+
+void contr_destroy(Contr *self);
+
+int addProd(Contr* c, const char* name, const char* supplier, double quantity, p_time date);
+
