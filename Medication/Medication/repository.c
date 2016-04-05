@@ -16,23 +16,28 @@
 
 
 //-----------------INIT-----------------------
-void repo_init(Repo* repo){
-    repo -> capacity = CAPACITY;
-    repo -> len = 0;
-    repo -> arr = malloc(sizeof(Medication)*repo->capacity);
+void repo_init(Repo* self){
+    self -> arr = malloc(sizeof(vector));
+    self -> undo = (vector*) NULL;
+    self -> redo = (vector*) NULL;
+    vector_init(self->arr);
 }
+
+
+
 
 //--------------DESTROY------------------------
-void repo_destroy(Repo* repo){
-    free(repo->arr);
-    free(repo);
+void repo_destroy(Repo* self){
+    free(self->arr);
+    free(self);
 }
 
 
-//---------------FIND-----------------------
-int find(Repo* repo, const char* name){
-    for( int i = 0; i < getLength(repo); i++){
-        if( strcmp(get_elem(repo, i).name, name) == 0){
+//----------------FIND-------------------------
+int find(Repo* self, const char* name){
+    int len = vector_getLen(self -> arr);
+    for( int i = 0; i < len; i++){
+        if( strcmp(vector_getAt(self->arr, i).name, name) == 0){
             return i;
         }
     }
@@ -41,74 +46,94 @@ int find(Repo* repo, const char* name){
 
 
 //--------------ADD--------------------------
-void repo_add(Repo* repo, Medication* m){
-    
-    if(repo->len >= repo->capacity) {
-        int new_capacity = 2*repo->capacity;
-        Medication* new_arr = malloc(sizeof(Medication)*new_capacity);
-        for(int i=0; i<=getLength(repo); i++){
-            new_arr[i] = repo->arr[i];
-            repo -> capacity = new_capacity;
-            free(repo->arr);
-            repo-> arr = new_arr;
-            
-        }
-        
-    }
-    if (find(repo, m->name) != -1){
-        int pos = find(repo, m->name);
-        repo -> arr[pos].quantity += m->quantity;
-        //printf("Medication already exists!");
-    }
-    else{
-        repo -> arr[repo->len++] = *m;
-    }
-    
+void repo_add(Repo* self, Medication* m){
+    repo__saveRepo(&self);
+    vector_pushBack(self->arr, *m);
 }
 
-
-//--------------GET ELEM-----------------------
-Medication get_elem(Repo* repo, int pos){
-    return repo -> arr[pos];
-}
-
-//-------------GET LENGTH----------------------
-int getLength(Repo* repo){
-    return repo->len;
-}
 
 
 //---------------DELETE-------------------------
 void repo_delete(Repo* self, const char* name){
+    repo__saveRepo(&self);
     int pos = find(self, name);
     if (pos == -1){
         printf("Medication does not exist\n");
     }
-    int n = getLength(self);
-    for(int i=pos; i<n-1; i++){
-        self->arr[i] = self->arr[i+1];
-    }
-    --self->len;
+    vector_removeAt(self->arr, pos);
 }
 
 
 //--------------UPDATE------------------------
 void repo_update(Repo* self, Medication* m){
+    repo__saveRepo(&self);
     int pos = find(self, m->name);
     if (pos == -1){
         printf("Medication does not exist!\n");
     }
     if (pos != -1){
-        self->arr[pos] = *m;
+        vector_setAt(self->arr, pos, *m);
     }
 }
 
+
+
+
 //---------------GET ALL---------------------
-Medication* get_all(Repo* self){
+vector* get_all(Repo* self){
     return self -> arr;
 }
 
-void testRepo() {
+
+
+
+//--------------UNDO-------------------------
+int repo_undo(Repo **self) {
+    if((*self)->undo == (vector *)NULL)
+        return 0;
+    if((*self)->redo != (vector *) NULL)
+        vector_destroy((*self)->redo);
+    (*self)->redo = (vector *)malloc(sizeof(vector));
+        vector_init((*self)->redo);
+    for(int i = 0 ; i < vector_getLen((*self)->arr) ; ++ i)
+        vector_pushBack((*self)->redo, vector_getAt((*self)->arr, i));
+    vector_destroy((*self)->arr);
+    (*self)->arr = (*self)->undo;
+    (*self)->undo = (vector *)NULL;
+    return 1;
+}
+
+//--------------REDO-------------------------
+int repo_redo(Repo **self) {
+    if((*self)->redo == (vector *) NULL)
+        return 0;
+    if((*self)->undo != (vector *) NULL)
+        vector_destroy((*self)->undo);
+    (*self)->undo = (vector *)malloc(sizeof(vector));
+    vector_init((*self)->undo);
+    for(int i = 0 ; i < vector_getLen((*self)->arr) ; ++ i)
+        vector_pushBack((*self)->undo, vector_getAt((*self)->arr, i));
+    vector_destroy((*self)->arr);
+    (*self)->arr = (*self)->redo;
+    (*self)->redo = (vector * )NULL;
+    return 1;
+}
+
+void repo__saveRepo(Repo **self) {
+    if((*self)->redo != (vector *) NULL)
+        vector_destroy((*self)->redo);
+    (*self)->redo = (vector *)NULL;
+    if((*self)->undo != (vector *) NULL)
+        vector_destroy((*self)->undo);
+    (*self)->undo = (vector *)malloc(sizeof(vector));
+    vector_init((*self)->undo);
+    for(int i = 0 ; i < vector_getLen((*self)->arr) ; ++ i)
+        vector_pushBack((*self)->undo, vector_getAt((*self)->arr, i));
+}
+
+
+
+ void testRepo() {
     Repo* repo = malloc(sizeof(Repo));
     repo_init(repo);
     assert(getLength(repo)==0);
@@ -120,3 +145,4 @@ void testRepo() {
     assert(getLength(repo)==0);
     
 }
+ 

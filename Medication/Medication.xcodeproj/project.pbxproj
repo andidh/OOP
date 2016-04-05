@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		993680081C930AF200A7A9C7 /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 993680061C930AF200A7A9C7 /* vector.c */; };
 		999896351C889B2D00F0074D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 999896341C889B2D00F0074D /* main.c */; };
 		9998963D1C889B3900F0074D /* domain.c in Sources */ = {isa = PBXBuildFile; fileRef = 9998963B1C889B3900F0074D /* domain.c */; };
 		999896401C889B4900F0074D /* repository.c in Sources */ = {isa = PBXBuildFile; fileRef = 9998963E1C889B4900F0074D /* repository.c */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		993680061C930AF200A7A9C7 /* vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vector.c; sourceTree = "<group>"; };
+		993680071C930AF200A7A9C7 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
 		999896311C889B2D00F0074D /* Medication */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Medication; sourceTree = BUILT_PRODUCTS_DIR; };
 		999896341C889B2D00F0074D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		9998963B1C889B3900F0074D /* domain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = domain.c; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				999896441C889B5300F0074D /* console.c */,
 				999896451C889B5300F0074D /* console.h */,
 				999896341C889B2D00F0074D /* main.c */,
+				993680061C930AF200A7A9C7 /* vector.c */,
+				993680071C930AF200A7A9C7 /* vector.h */,
 			);
 			path = Medication;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			files = (
 				999896351C889B2D00F0074D /* main.c in Sources */,
 				999896431C889B4E00F0074D /* controller.c in Sources */,
+				993680081C930AF200A7A9C7 /* vector.c in Sources */,
 				9998963D1C889B3900F0074D /* domain.c in Sources */,
 				999896461C889B5300F0074D /* console.c in Sources */,
 				999896401C889B4900F0074D /* repository.c in Sources */,

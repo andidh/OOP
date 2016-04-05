@@ -36,4 +36,4 @@ int get_quantity(Medication* self);
 //Function which returns the price
 float get_price(Medication* self);
 
-
+void testCreateMedication();

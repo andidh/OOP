@@ -14,7 +14,6 @@
 #include <stdlib.h>
 
 
-
 void app() {
     Repo *repo = (Repo *) malloc(sizeof(Repo));
     Contr *ctrl = (Contr *) malloc(sizeof(Contr));
@@ -35,3 +34,4 @@ int main() {
     return 0;
     
 }
+

@@ -23,9 +23,9 @@ void ui_destroy(UI* ui){
 
 //-------------PRINT MEDICATION----------------
 void toString(Repo* self){
-    int len = getLength(self);
+    int len = vector_getLen(self->arr);
     for (int i=0; i<len; i++){
-        Medication m = get_elem(self, i);
+        Medication m = vector_getAt(self->arr, i);
         printf("Name: %s | Concentration: %.2f | Quantity: %d | Price: %.2f \n",
            get_name(&m),
            get_concentration(&m),
@@ -79,7 +79,10 @@ void ui_printMenu() {
     printf("4. Update\n");
     printf("5. Filter by name\n");
     printf("6. Filter by quantity\n");
+    printf("7. Undo\n");
+    printf("8. Redo\n");
 }
+
 
 //-------------GET ALL-----------------------
 void ui_showAll(UI* ui){
@@ -108,6 +111,29 @@ void ui_update(UI* ui){
     printf("-----------------\n");
 }
 
+void ui_undo(UI *self) {
+    if(!controller_undo(self->contr))
+    printf("Cannot undo!\n");
+}
+
+void ui_redo(UI *self) {
+    if(!controller_redo(self->contr))
+    printf("Cannot redo!\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //------------------FILTER BY NAME----------------
 void ui_filter(UI* ui){
     char* name = readString("Give name: ");
@@ -128,6 +154,7 @@ void ui_filterByQuantity(UI* ui){
     printf("-----------------\n");
     
 }
+ */
 
 void run(UI *self) {
     while(1) {
@@ -149,11 +176,20 @@ void run(UI *self) {
             case 4:
                 ui_update(self);
                 break;
-            case 5:
+            /*
+             case 5:
                 ui_filter(self);
                 break;
             case 6:
                 ui_filterByQuantity(self);
+                break;
+             h*/
+                
+            case 7:
+                ui_undo(self);
+                break;
+            case 8:
+                ui_redo(self);
                 break;
             default:
                 printf("You entered a wrong command");

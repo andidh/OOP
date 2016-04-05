@@ -26,11 +26,12 @@ void contr_add(Contr* contr, char* name, float concentration, int quantity, floa
     Medication* m = malloc(sizeof(Medication));
     new_medication(m, name, concentration, quantity, price);
     repo_add(contr->repo, m);
+    
 }
 
 
 //----------------GET ALL------------------
-Medication* getAll(Contr* contr){
+vector* getAll(Contr* contr){
     return get_all(contr->repo);
 }
 
@@ -48,8 +49,45 @@ void contr_update(Contr* contr, char* name, float concentration, int quantity, f
 }
 
 
+int controller_undo(Contr *self) {
+    return repo_undo(&self->repo);
+}
+
+int controller_redo(Contr *self) {
+    return repo_redo(&self->repo);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-------------FILTER BY NAME---------------
-Repo* filterByName(Contr* contr, const char* name){
+/*Repo* filterByName(Contr* contr, const char* name){
     Repo* r = contr -> repo;
     Repo* new_v = malloc(sizeof(Repo));
     repo_init(new_v);
@@ -65,7 +103,7 @@ Repo* filterByName(Contr* contr, const char* name){
         }
     }
     new_v = sort(new_v);
-    repo_destroy(r);
+    //repo_destroy(r);
     return new_v;
 }
 
@@ -101,6 +139,7 @@ Repo* sort(Repo* v){
                     v->arr[i]=v->arr[j];
                     v->arr[j]=aux;
                 }
-    destroy_medication(&aux);
+    //destroy_medication(&aux);
     return v;
 }
+*/

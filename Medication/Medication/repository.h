@@ -8,10 +8,12 @@
 
 #pragma once
 #include "domain.h"
+#include "vector.h"
 
 typedef struct{
-    int len, capacity;
-    Medication* arr;
+    vector* arr;
+    vector* undo;
+    vector* redo;
 }Repo;
 
 
@@ -36,14 +38,6 @@ int find(Repo* repo, const char* name);
  */
 void repo_add(Repo* repo, Medication* m);
 
-
-//Function which returns a element based on its position
-Medication get_elem(Repo* repo, int pos);
-
-//Returns the length of the repo
-int getLength(Repo* repo);
-
-
 /*
  Delete funtion:
  input: name of the element
@@ -53,4 +47,22 @@ void repo_delete(Repo* self, const char* name);
 //Updates an existing element
 void repo_update(Repo* self, Medication* m);
 
-Medication* get_all(Repo* self);
+int repo_undo(Repo ** self);
+
+/**
+ Method for the Redo feature
+ Returns 1 if Redo was done
+ 0 if it cannot be don
+ */
+int repo_redo(Repo ** self);
+
+/// private
+/**
+ Method to prepare the Undo and Redo feature. It makes a deep copy of the Repository
+ */
+void repo__saveRepo(Repo ** self);
+
+
+vector* get_all(Repo* self);
+
+void testRepo();

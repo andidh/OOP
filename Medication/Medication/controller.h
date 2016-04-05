@@ -19,7 +19,7 @@ void contr_destroy(Contr* contr);
 
 void contr_add(Contr* contr, char* name, float concentration, int quantity, float price);
 
-Medication* getAll(Contr* contr);
+vector* getAll(Contr* contr);
 
 void contr_delete(Contr* contr, const char* name);
 
@@ -30,3 +30,7 @@ Repo* sort(Repo* v);
 Repo* filterByName(Contr* contr, const char* name);
 
 Repo* filterSupply(Contr* contr, int quantity);
+
+int controller_undo(Contr *self);
+
+int controller_redo(Contr *self);
