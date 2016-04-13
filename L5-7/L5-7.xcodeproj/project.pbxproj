@@ -12,7 +12,6 @@
 		993FB8881C9D2D070099A149 /* repository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 993FB8861C9D2D070099A149 /* repository.cpp */; };
 		993FB88B1C9D2D120099A149 /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 993FB8891C9D2D120099A149 /* controller.cpp */; };
 		993FB88E1C9D2D190099A149 /* console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 993FB88C1C9D2D190099A149 /* console.cpp */; };
-		993FB8911C9D2D1F0099A149 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 993FB88F1C9D2D1F0099A149 /* utils.cpp */; };
 		993FB8941C9D383A0099A149 /* Store.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 993FB8921C9D383A0099A149 /* Store.cpp */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		993FB88A1C9D2D120099A149 /* controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = controller.hpp; sourceTree = "<group>"; };
 		993FB88C1C9D2D190099A149 /* console.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = console.cpp; sourceTree = "<group>"; };
 		993FB88D1C9D2D190099A149 /* console.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = console.hpp; sourceTree = "<group>"; };
-		993FB88F1C9D2D1F0099A149 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		993FB8901C9D2D1F0099A149 /* utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
 		993FB8921C9D383A0099A149 /* Store.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Store.cpp; sourceTree = "<group>"; };
 		993FB8931C9D383A0099A149 /* Store.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Store.hpp; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				993FB8831C9D2CFE0099A149 /* domain.cpp */,
 				993FB8841C9D2CFE0099A149 /* domain.hpp */,
 				993FB87C1C9D2CEB0099A149 /* main.cpp */,
-				993FB88F1C9D2D1F0099A149 /* utils.cpp */,
 				993FB8901C9D2D1F0099A149 /* utils.hpp */,
 			);
 			path = "L5-7";
@@ -152,7 +149,6 @@
 				993FB88E1C9D2D190099A149 /* console.cpp in Sources */,
 				993FB8881C9D2D070099A149 /* repository.cpp in Sources */,
 				993FB8941C9D383A0099A149 /* Store.cpp in Sources */,
-				993FB8911C9D2D1F0099A149 /* utils.cpp in Sources */,
 				993FB8851C9D2CFE0099A149 /* domain.cpp in Sources */,
 				993FB88B1C9D2D120099A149 /* controller.cpp in Sources */,
 			);
@@ -273,6 +269,7 @@
 				993FB8821C9D2CEB0099A149 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

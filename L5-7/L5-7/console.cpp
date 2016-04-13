@@ -158,11 +158,10 @@ void UI::run()
         int command{ 0 };
         cout << "Input the command: ";
         cin >> command;
-        cin.ignore();
         if (command == 0)
             break;
         
-        // repository management
+        // admin
         if (command == 1)
         {
             while (true)
@@ -171,7 +170,6 @@ void UI::run()
                 int commandRepo{0};
                 cout << "Input the command: ";
                 cin >> commandRepo;
-                cin.ignore();
                 if (commandRepo == 0)
                     break;
                 switch (commandRepo)
@@ -194,7 +192,7 @@ void UI::run()
             }
         }
         
-        // store management
+        // user
         if (command == 2)
         {
             while (true)
@@ -203,7 +201,6 @@ void UI::run()
                 int commandStore{0};
                 cout << "Input the command: ";
                 cin >> commandStore;
-                cin.ignore();
                 if (commandStore == 0)
                     break;
                 switch (commandStore)
