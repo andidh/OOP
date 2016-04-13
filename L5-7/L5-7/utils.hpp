@@ -66,7 +66,7 @@ public:
     
     void remove(int pos){
         long len = Vector::getSize();
-        for( long i = len; i< len - 1; ++i)
+        for( long i = pos; i< len - 1; ++i)
             this->arr[i] = this->arr[i+1];
         --this->size;
     }
@@ -78,7 +78,12 @@ public:
     
 private:
     void resize(double factor = 2){
-        
+        int new_capacity = this->size * factor;
+        TE* new_arr = new TE[new_capacity];
+            for( int i=0; i<this->size; i++)
+                new_arr[i] = this->arr[i];
+        delete[] arr;
+        this->arr = new_arr;
     }
     
     
