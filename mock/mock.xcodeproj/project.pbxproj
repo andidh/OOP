@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990988CF1CCF601700CE8BCC /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990988CD1CCF601700CE8BCC /* Person.cpp */; };
 		9978456B1CCF29F7006F3823 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9978456A1CCF29F7006F3823 /* main.cpp */; };
+		997845731CCF2C6A006F3823 /* Domain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 997845711CCF2C6A006F3823 /* Domain.cpp */; };
+		997845761CCF2C71006F3823 /* Repository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 997845741CCF2C71006F3823 /* Repository.cpp */; };
+		997845791CCF2C78006F3823 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 997845771CCF2C78006F3823 /* Controller.cpp */; };
+		9978457C1CCF2CA1006F3823 /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9978457A1CCF2CA1006F3823 /* UI.cpp */; };
+		997845821CCF2E68006F3823 /* analysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 997845801CCF2E68006F3823 /* analysis.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +29,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		990988CD1CCF601700CE8BCC /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		990988CE1CCF601700CE8BCC /* Person.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
 		997845671CCF29F7006F3823 /* mock */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mock; sourceTree = BUILT_PRODUCTS_DIR; };
 		9978456A1CCF29F7006F3823 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		997845711CCF2C6A006F3823 /* Domain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Domain.cpp; sourceTree = "<group>"; };
+		997845721CCF2C6A006F3823 /* Domain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Domain.hpp; sourceTree = "<group>"; };
+		997845741CCF2C71006F3823 /* Repository.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Repository.cpp; sourceTree = "<group>"; };
+		997845751CCF2C71006F3823 /* Repository.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Repository.hpp; sourceTree = "<group>"; };
+		997845771CCF2C78006F3823 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
+		997845781CCF2C78006F3823 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		9978457A1CCF2CA1006F3823 /* UI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
+		9978457B1CCF2CA1006F3823 /* UI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UI.hpp; sourceTree = "<group>"; };
+		997845801CCF2E68006F3823 /* analysis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analysis.cpp; sourceTree = "<group>"; };
+		997845811CCF2E68006F3823 /* analysis.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = analysis.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +75,18 @@
 		997845691CCF29F7006F3823 /* mock */ = {
 			isa = PBXGroup;
 			children = (
+				9978457A1CCF2CA1006F3823 /* UI.cpp */,
+				9978457B1CCF2CA1006F3823 /* UI.hpp */,
+				997845771CCF2C78006F3823 /* Controller.cpp */,
+				997845781CCF2C78006F3823 /* Controller.hpp */,
+				997845741CCF2C71006F3823 /* Repository.cpp */,
+				997845751CCF2C71006F3823 /* Repository.hpp */,
+				990988CD1CCF601700CE8BCC /* Person.cpp */,
+				990988CE1CCF601700CE8BCC /* Person.hpp */,
+				997845711CCF2C6A006F3823 /* Domain.cpp */,
+				997845721CCF2C6A006F3823 /* Domain.hpp */,
+				997845801CCF2E68006F3823 /* analysis.cpp */,
+				997845811CCF2E68006F3823 /* analysis.hpp */,
 				9978456A1CCF29F7006F3823 /* main.cpp */,
 			);
 			path = mock;
@@ -118,7 +148,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997845821CCF2E68006F3823 /* analysis.cpp in Sources */,
+				9978457C1CCF2CA1006F3823 /* UI.cpp in Sources */,
 				9978456B1CCF29F7006F3823 /* main.cpp in Sources */,
+				997845731CCF2C6A006F3823 /* Domain.cpp in Sources */,
+				990988CF1CCF601700CE8BCC /* Person.cpp in Sources */,
+				997845761CCF2C71006F3823 /* Repository.cpp in Sources */,
+				997845791CCF2C78006F3823 /* Controller.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +275,7 @@
 				997845701CCF29F7006F3823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

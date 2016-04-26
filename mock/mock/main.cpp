@@ -7,9 +7,16 @@
 //
 
 #include <iostream>
+#include "UI.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    
+    Repository repo;
+    Controller contr(repo);
+    
+    UI ui(contr);
+    ui.run();
+    
+    
     return 0;
 }
