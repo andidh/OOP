@@ -4,4 +4,3 @@ L,brown,289,120,https://cdna.lystit.com/photos/8703-2015/12/11/zara-black-sand-h
 M,sand,400,70,http://static.zara.net/photos//2016/V/0/1/p/6873/129/711/2/w/1920/6873129711_3_1_1.jpg?timestamp=1444926407482
 L,navy,749,20,http://cache.net-a-porter.com/images/products/35197/35197_in_xl.jpg
 M,pink,500,10,http://assets.elleuk.com/gallery/6626/1388364938-hobbs-nw3-pink-trench__large.jpg
-L,red,900,213,http://google.ro

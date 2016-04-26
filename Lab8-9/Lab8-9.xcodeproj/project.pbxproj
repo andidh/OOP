@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9951FC981CC01E7F00AB80DE /* storeHTML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9951FC961CC01E7F00AB80DE /* storeHTML.cpp */; };
 		996D30081CB9037200620BB2 /* storeFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 996D30061CB9037200620BB2 /* storeFile.cpp */; };
 		996D300B1CB9037800620BB2 /* storeCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 996D30091CB9037800620BB2 /* storeCSV.cpp */; };
 		997760861CB683DD00B09719 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 997760851CB683DD00B09719 /* main.cpp */; };
@@ -33,6 +34,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9951FC961CC01E7F00AB80DE /* storeHTML.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = storeHTML.cpp; sourceTree = "<group>"; };
+		9951FC971CC01E7F00AB80DE /* storeHTML.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = storeHTML.hpp; sourceTree = "<group>"; };
+		9951FC991CC0204800AB80DE /* store.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = store.html; sourceTree = "<group>"; };
+		9951FC9A1CC0217400AB80DE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		996D30061CB9037200620BB2 /* storeFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = storeFile.cpp; sourceTree = "<group>"; };
 		996D30071CB9037200620BB2 /* storeFile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = storeFile.hpp; sourceTree = "<group>"; };
 		996D30091CB9037800620BB2 /* storeCSV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = storeCSV.cpp; sourceTree = "<group>"; };
@@ -97,6 +102,8 @@
 				9977609F1CB6846A00B09719 /* controller.hpp */,
 				997760951CB6844A00B09719 /* repository.cpp */,
 				997760961CB6844A00B09719 /* repository.hpp */,
+				9951FC961CC01E7F00AB80DE /* storeHTML.cpp */,
+				9951FC971CC01E7F00AB80DE /* storeHTML.hpp */,
 				996D30091CB9037800620BB2 /* storeCSV.cpp */,
 				996D300A1CB9037800620BB2 /* storeCSV.hpp */,
 				996D30061CB9037200620BB2 /* storeFile.cpp */,
@@ -112,6 +119,8 @@
 				997760851CB683DD00B09719 /* main.cpp */,
 				99774F121CB7B4400089A804 /* store.txt */,
 				996D300C1CB90A5900620BB2 /* CSV.txt */,
+				9951FC991CC0204800AB80DE /* store.html */,
+				9951FC9A1CC0217400AB80DE /* style.css */,
 			);
 			path = "Lab8-9";
 			sourceTree = "<group>";
@@ -172,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9951FC981CC01E7F00AB80DE /* storeHTML.cpp in Sources */,
 				997760861CB683DD00B09719 /* main.cpp in Sources */,
 				996D30081CB9037200620BB2 /* storeFile.cpp in Sources */,
 				9977609D1CB6846200B09719 /* store.cpp in Sources */,

@@ -11,7 +11,9 @@
 #include "exception.hpp"
 
 
-
+StoreCSV::StoreCSV(const string& file) {
+    this->filename = file;
+}
 void StoreCSV::display() const {
     string cmd = "open " + this->filename;
     system(cmd.c_str());

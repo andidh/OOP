@@ -14,7 +14,16 @@ int main(){
     
     try{
         Repository repo("store.txt");
-        StoreFile* s = new StoreCSV();
+        string ans;
+        cout<<"Do you want a HTML or CSV basket? - ";
+        cin>> ans;
+        StoreFile* s;
+        if(ans == "html"){
+            s = new StoreHTML("store.html");
+        }
+        else {
+            s = new StoreCSV("CSV.txt");
+        }
         Controller contr(repo, s, Validator{});
         UI ui(contr);
         ui.run();

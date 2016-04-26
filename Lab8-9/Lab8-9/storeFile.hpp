@@ -16,6 +16,7 @@ protected:
     
 public:
     StoreFile();
+    StoreFile(const string& file);
     virtual ~StoreFile() {}
     
     void setFile(const string& file);

@@ -47,10 +47,6 @@ void Store::clear(){
 void Store::buyCoat(Coat& c){
     this->basket.push_back(c);
     this->total += c.getPrice();
-    int n = c.getQuantity();
-    n -= 1;;
-    c.setQuantity(n);
-    
 }
 
 float Store::showTotal(){

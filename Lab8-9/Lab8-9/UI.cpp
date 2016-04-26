@@ -256,12 +256,14 @@ void UI::next(){
 }
 
 void UI::saveBasket(){
+    /*
     string file;
     cout<<"Enter file name: ";
     cin>>file;
+     */
     
     try{
-        this->contr.saveToFile(file);
+        this->contr.saveToFile();
         if(this->contr.getStore() == nullptr){
             cout<<"Basket could not be opened!"<<endl;
             return;

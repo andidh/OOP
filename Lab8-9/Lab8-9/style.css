@@ -1,0 +1,47 @@
+* {
+	font-family: sans-serif;
+	color: #2c3e50;
+}
+
+body {
+	background-image: url("images/swirl_pattern.png");
+}
+.main {
+	padding-top: 20px;
+	text-align: center;
+    width: 500px;
+	margin: 0px auto;
+	display: block;
+}
+
+h2 {
+    padding-top: 20px;
+}
+h1 {
+	padding-bottom: 20px;
+}
+table {
+	background-color: #e4f1fe;
+	margin: 0 auto;
+	border: 2px #2c3e50 solid;
+	border-collapse: collapse;
+	
+	webkit-box-shadow: 0px 4px 29px -7px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 4px 29px -7px rgba(0,0,0,0.75);
+	box-shadow: 0px 4px 29px -7px rgba(0,0,0,0.75);
+	
+}
+
+th, td {
+    padding: 15px;
+    border: 1.5px #2c3e50 solid;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.2s ease-in;
+}
+
+a:hover {
+	color: #d35400;
+}

@@ -27,6 +27,7 @@ void Controller::removeCoat(const string& link){
 
 void Controller::updateCoat(const string &size, const string &color, const float &price, const int &quantity, const string &link){
     Coat c{ size, color, price, quantity, link};
+    this->val.validate(c);
     this->repo.update(c);
 }
 
@@ -81,10 +82,11 @@ float Controller::showTotal(){
 
 
 
-void Controller::saveToFile(const string& filename){
-    if(this->store == nullptr)
+void Controller::saveToFile(){
+    /*if(this->store == nullptr)
         return;
     this->store->setFile(filename);
+     */
     this->store->writeToFile();
 }
 

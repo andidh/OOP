@@ -33,9 +33,6 @@ public:
     
     void toString() const;
     void show();
-    //--------overload eual op-------
-    //bool operator==(Coat& c) { return this->link == c.link; };
-
     
     
     friend istream& operator>>(istream& is, Coat& c);

@@ -12,6 +12,7 @@
 #include "store.hpp"
 #include "storeFile.hpp"
 #include "storeCSV.hpp"
+#include "storeHTML.hpp"
 
 
 class Controller {
@@ -40,7 +41,7 @@ public:
     void buyCoat(Coat& c);
     float showTotal();
     
-    void saveToFile(const string& filename);
+    void saveToFile();
     void openStore();
     
     

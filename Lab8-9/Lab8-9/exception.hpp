@@ -27,11 +27,6 @@ public:
 };
 
 
-class DuplicateCoat : public RepoException {
-    const char* what();
-};
-
-
 
 class FileException : public exception {
 
