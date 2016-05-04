@@ -1,0 +1,6 @@
+M,beige,450,100,http://uniqlo.scene7.com/is/image/UNIQLO/goods_32_133427?$detail$
+M,grey,300,80,http://static.zara.net/photos//2015/I/0/1/p/8073/247/802/3/w/1920/8073247802_3_1_1.jpg?timestamp=1441881053946
+L,brown,289,120,https://cdna.lystit.com/photos/8703-2015/12/11/zara-black-sand-herringbone-jacket-black-product-4-066960605-normal.jpeg
+M,sand,400,70,http://static.zara.net/photos//2016/V/0/1/p/6873/129/711/2/w/1920/6873129711_3_1_1.jpg?timestamp=1444926407482
+L,navy,749,20,http://cache.net-a-porter.com/images/products/35197/35197_in_xl.jpg
+M,pink,500,10,http://assets.elleuk.com/gallery/6626/1388364938-hobbs-nw3-pink-trench__large.jpg
