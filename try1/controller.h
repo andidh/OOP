@@ -18,10 +18,10 @@ public:
     Controller(const Repository& r, StoreFile* s, Validator v) : repo {r}, store {s}, val {v} {}
 
     //--------ADMIN---------
-    void addToRepo(const string& size, const string& color, const float& price, const int& quantity, const string& link);
+    void addToRepo(const string& size, const string& color, const int& price, const int& quantity, const string& link);
     vector<Coat> getAll();
     void removeCoat(const string& link);
-    void updateCoat(const string& size, const string& color, const float& price, const int& quantity, const string& link);
+    void updateCoat(const string& size, const string& color, const int& price, const int& quantity, const string& link);
 
 
 
@@ -30,7 +30,7 @@ public:
     void start();
     void next();
     void buyCoat(Coat& c);
-    float showTotal();
+    int showTotal();
 
     void saveToFile();
     void openStore();

@@ -60,6 +60,8 @@ public:
     QPushButton* nextBtn;
     QPushButton* buyBtn;
     QPushButton* total;
+    QPushButton* save;
+    QPushButton* open;
 
 private:
     Controller* ctrl;
@@ -86,7 +88,8 @@ public slots:
     void next();
     void buy();
     void showTotal();
-
+    void saveToFile();
+    void openFile();
 
 
 

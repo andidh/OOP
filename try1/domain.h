@@ -5,19 +5,18 @@
 using namespace std;
 
 class Coat {
-    int quantity;
+    int quantity, price;
     string color, link, size;
-    float price;
 public:
 
     //----constructors------
     Coat();
-    Coat( const string& size, const string& color , const float& price , const int& quantity , const string& link);
+    Coat( const string& size, const string& color , const int& price , const int& quantity , const string& link);
 
     //-----GETTERS-----
     string getSize() const;
     string getColor() const;
-    float getPrice() const;
+    int getPrice() const;
     int getQuantity() const;
     string getLink() const;
 

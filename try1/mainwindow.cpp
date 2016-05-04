@@ -66,9 +66,6 @@ void MainWindow::setUp() {
     leftLay->addWidget(btnWid);
 
     rightWid = new QWidget;
-    rightLay = new QVBoxLayout(rightWid);
-
-
 
 }
 
@@ -83,17 +80,13 @@ void MainWindow::connectSignals() {
 
 
 
-
-
-// SLOTS
-
 void MainWindow::getCoats() {
 
     if(this->allCoats->count() > 0)
         this->allCoats->clear();
 
     for ( auto c : this->ctrl->getAll()){
-        QString item = QString::fromStdString(c.getSize() + " - " + c.getColor() + " - " + to_string(c.getPrice()) + " - " + to_string(c.getQuantity()) + " - " + c.getLink());
+        QString item = QString::fromStdString(c.getSize() + " - " + c.getColor() + " - " + to_string(c.getPrice()) );
         this->allCoats->addItem(item);
     }
 
@@ -152,7 +145,7 @@ void MainWindow::addCoat() {
     size = sizeText->text().toStdString();
     color = colorText->text().toStdString();
     price = priceText->text().toInt();
-    quant = quantText->text().toFloat();
+    quant = quantText->text().toInt();
     link = linkText->text().toStdString();
 
     try {
@@ -194,7 +187,7 @@ void MainWindow::updateCoat() {
     size = sizeText->text().toStdString();
     color = colorText->text().toStdString();
     price = priceText->text().toInt();
-    quant = quantText->text().toFloat();
+    quant = quantText->text().toInt();
     link = linkText->text().toStdString();
 
 
@@ -234,27 +227,30 @@ void MainWindow::filterCoat() {
 void MainWindow::rightInit(){
 
     resize(900,500);
+
     // generating Right side
     store = new QListWidget();
     rightLay->addWidget(store);
     hLayout->addWidget(rightWid);
 
     QWidget* storeBtn = new QWidget;
-    QHBoxLayout* strBtnLay = new QHBoxLayout(storeBtn);
+    QGridLayout* btnLay = new QGridLayout(storeBtn);
 
     showCoat = new QPushButton("Show");
     nextBtn = new QPushButton("Next");
     buyBtn = new QPushButton("Buy");
-    strBtnLay->addWidget(showCoat);
-    strBtnLay->addWidget(nextBtn);
-    strBtnLay->addWidget(buyBtn);
+    total = new QPushButton("Show Total");
+    save = new QPushButton("Save basket");
+    open = new QPushButton("Open");
+    btnLay->addWidget(showCoat, 0, 0);
+    btnLay->addWidget(nextBtn, 0, 1);
+    btnLay->addWidget(buyBtn, 0, 2);
+    btnLay->addWidget(total, 1, 0);
+    btnLay->addWidget(save, 1, 1);
+    btnLay->addWidget(open, 1, 2);
+
     rightLay->addWidget(storeBtn);
 
-    QWidget* storeBtn2 = new QWidget;
-    QHBoxLayout* strBtnLay2 = new QHBoxLayout(storeBtn2);
-    total = new QPushButton("Show Total");
-    strBtnLay2->addWidget(total);
-    rightLay->addWidget(storeBtn2);
 }
 
 void MainWindow::rightConnect() {
@@ -262,19 +258,32 @@ void MainWindow::rightConnect() {
     QObject::connect(this->nextBtn, SIGNAL(clicked()), this, SLOT(next()));
     QObject::connect(this->buyBtn, SIGNAL(clicked()), this, SLOT(buy()));
     QObject::connect(this->total, SIGNAL(clicked()), this, SLOT(showTotal()));
+    QObject::connect(this->save, SIGNAL(clicked()), this, SLOT(saveToFile()));
+    QObject::connect(this->open, SIGNAL(clicked()), this, SLOT(openFile()));
+
 }
+
 
 void MainWindow::addToStore() {
 
 
+    if (rightWid->layout())
+        {
+            qDeleteAll(rightWid->children());
+            delete rightWid->layout();
+        }
+    rightLay = new QVBoxLayout(rightWid);
     this->rightInit();
     this->rightConnect();
 
-    //Adding elements to the List
 
 
     string size = filterEdit->text().toStdString();
     this->ctrl->addToStore(size);
+    if(this->ctrl->getStore()->isEmpty()){
+        QMessageBox::critical(this, "ERROR", "There are no coats in store!");
+        return;
+    }
     this->ctrl->start();
     Coat c = this->ctrl->getStore()->getCurrent();
     QString item = QString::fromStdString( c.getColor() + " - " + to_string(c.getPrice()) +  " - " + c.getLink());
@@ -312,4 +321,14 @@ void MainWindow::showTotal(){
     QMessageBox::information(this, "Info", "Total is: "+ total);
 
 
+}
+
+void MainWindow::saveToFile() {
+    this->ctrl->saveToFile();
+    QMessageBox::information(this, "Info", "Basket was successfully saved!");
+
+}
+
+void MainWindow::openFile(){
+    this->ctrl->openStore();
 }

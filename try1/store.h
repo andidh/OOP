@@ -5,8 +5,7 @@
 class Store{
 protected:
     vector<Coat> all, basket;
-    int current;
-    float total;
+    int current, total;
 
 
 public:
@@ -23,7 +22,7 @@ public:
     void clear();
 
     void buyCoat(Coat& c);
-    float showTotal();
+    int showTotal();
     void clearTotal();
 
 

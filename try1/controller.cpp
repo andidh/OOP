@@ -3,7 +3,7 @@
 
 
 //--------ADMIN-----------
-void Controller::addToRepo(const string& size, const string& color, const float& price, const int& quantity, const string& link){
+void Controller::addToRepo(const string& size, const string& color, const int& price, const int& quantity, const string& link){
     Coat c{ size, color, price, quantity, link};
     this->val.validate(c);
     this->repo.addCoat(c);
@@ -17,7 +17,7 @@ void Controller::removeCoat(const string& link){
     this->repo.removeCoat(link);
 }
 
-void Controller::updateCoat(const string &size, const string &color, const float &price, const int &quantity, const string &link){
+void Controller::updateCoat(const string &size, const string &color, const int &price, const int &quantity, const string &link){
     Coat c{ size, color, price, quantity, link};
     this->val.validate(c);
     this->repo.update(c);
@@ -66,7 +66,7 @@ void Controller::buyCoat(Coat& c){
     this->store->buyCoat(c);
 }
 
-float Controller::showTotal(){
+int Controller::showTotal(){
     return this->store->showTotal();
 }
 

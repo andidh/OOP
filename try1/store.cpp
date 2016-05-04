@@ -44,7 +44,7 @@ void Store::buyCoat(Coat& c){
     this->total += c.getPrice();
 }
 
-float Store::showTotal(){
+int Store::showTotal(){
     return this->total;
 }
 

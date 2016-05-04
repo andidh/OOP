@@ -8,7 +8,7 @@
 
 Coat::Coat() : size(""), color(""), price(0), quantity(0), link("") {}
 
-Coat::Coat( const string& size, const string& color , const float& price , const int& quantity , const string& link){
+Coat::Coat( const string& size, const string& color , const int& price , const int& quantity , const string& link){
     this->size = size;
     this->color = color;
     this->price = price;
@@ -23,7 +23,7 @@ string Coat::getColor() const{
     return color;
 }
 
-float Coat::getPrice() const{
+int Coat::getPrice() const{
     return price;
 }
 
@@ -66,7 +66,7 @@ istream& operator>>(istream& is, Coat& c){
         return is;
     c.size = tokens[0];
     c.color = tokens[1];
-    c.price = stof(tokens[2]);
+    c.price = stoi(tokens[2]);
     c.quantity = stoi(tokens[3]);
     c.link = tokens[4];
 
