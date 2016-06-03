@@ -23,4 +23,5 @@ public:
     int isHealthy(const string& name, const int& month);
     
     vector<Medical*> getAnalysis(const string& name);
+    vector<Person> getAll() { return this->repo.getAll(); }
 };

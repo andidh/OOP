@@ -10,6 +10,7 @@
 #include "utils.hpp"
 #include<cstdlib>
 #include<iomanip>
+#include<sstream>
 
 
 
@@ -66,7 +67,11 @@ istream& operator>>(istream& is, Coat& c){
     string line;
     getline(is, line);
     
-    vector<string> tokens = tokenize(line, ',');
+    vector<string> tokens;
+    stringstream ss(line);
+    string token;
+    while(getline(ss, token, ',' ))
+        tokens.push_back(token);
     if (tokens.size() != 5)
         return is;
     c.size = tokens[0];

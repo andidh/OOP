@@ -20,7 +20,7 @@ Person Repository::getPerson(const string& name) {
         if(item.getName() == name )
             return item;
     }
-    return Person("");
+    return Person{""};
 }
 
 vector<Medical*> Repository::getAnalysis(const string &name){

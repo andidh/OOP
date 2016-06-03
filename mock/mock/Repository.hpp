@@ -24,6 +24,7 @@ public:
     Person getPerson(const string& name);
     
     vector<Medical*> getAnalysis(const string& name);
+    vector<Person> getAll() { return all; }
     
     
 };

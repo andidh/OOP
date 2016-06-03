@@ -25,7 +25,7 @@ public:
             output: v - vector containing the filtered fruits
      */
     vector<Fruit> filterByBenefit(string& nutri);
-    vector<Fruit>& sort(vector<Fruit>& v);
+    vector<Fruit>& sorting(vector<Fruit>& v);
 };
 
 

@@ -9,6 +9,7 @@
 #include <string.h>
 #include<iostream>
 #include <cassert>
+#include <algorithm>
 
 
 Controller::Controller(Repository& repo){
@@ -29,14 +30,22 @@ void Controller::contr_deleteFruit(string& name){
 }
 
 vector<Fruit> Controller::filterByBenefit(string& nutri){
+    /*
     vector<Fruit> aux;
     for( auto f : Controller::getAll()){
         if(f.getNutri() == nutri)
             aux.push_back(f);
     }
     return Controller::sort(aux);
+     */
+    vector<Fruit> all = this->getAll();
+    std::sort(all.begin(), all.end(), [](const Fruit&a, const Fruit& b) {
+        return a.getQuantity() < b.getQuantity();
+    });
+    return all;
+    
 }
-vector<Fruit>& Controller::sort(vector<Fruit>& v){
+vector<Fruit>& Controller::sorting(vector<Fruit>& v){
     int i, j;
     Fruit aux;
     for(i=0; i<v.size()-1;i++){

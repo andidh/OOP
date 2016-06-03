@@ -39,4 +39,5 @@ FORMS    += mainwindow.ui
 
 DISTFILES += \
     store.txt \
-    csv.txt
+    csv.txt \
+    store.html

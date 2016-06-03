@@ -43,7 +43,7 @@ public:
     QLineEdit* linkText;
 
     //Buttons
-    QHBoxLayout* btnLay;
+    QGridLayout* btnLay;
     QPushButton* add;
     QPushButton* remove;
     QPushButton* update;
@@ -56,6 +56,7 @@ public:
     QLineEdit* filterEdit;
     QPushButton* go;
 
+    //Right layout buttons
     QPushButton* showCoat;
     QPushButton* nextBtn;
     QPushButton* buyBtn;
@@ -82,16 +83,13 @@ public slots:
     void updateCoat();
     void filterCoat();
 
-
     void addToStore();
-    void shw();
+    void showInBrowser();
     void next();
     void buy();
     void showTotal();
     void saveToFile();
     void openFile();
-
-
 
 };
 

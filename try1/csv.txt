@@ -1,1 +1,2 @@
-M,beige,450,100,http://uniqlo.scene7.com/is/image/UNIQLO/goods_32_133427?$detail$
+M,beige,1000,100,http://uniqlo.scene7.com/is/image/UNIQLO/goods_32_133427?$detail$
+M,grey,300,80,http://static.zara.net/photos//2015/I/0/1/p/8073/247/802/3/w/1920/8073247802_3_1_1.jpg?timestamp=1441881053946

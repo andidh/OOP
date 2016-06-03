@@ -1,14 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <string>
-#include <QString>
-#include <QtWidgets>
-#include <QGridLayout>
-#include <QFormLayout>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QMessageBox>
-
+O
 
 MainWindow::MainWindow(Controller *ctrl, QWidget *parent) :
     QWidget(parent), ctrl(ctrl)
@@ -25,7 +17,7 @@ MainWindow::~MainWindow() {}
 
 void MainWindow::setUp() {
 
-    resize(600, 500);
+    resize(500, 500);
 
     hLayout = new QHBoxLayout();
     this->setLayout(hLayout);
@@ -53,15 +45,15 @@ void MainWindow::setUp() {
     leftLay->addWidget(formWid);
 
     QWidget* btnWid = new QWidget();
-    btnLay = new QHBoxLayout(btnWid);
+    btnLay = new QGridLayout(btnWid);
     add = new QPushButton("Add");
     remove = new QPushButton("Remove");
     update = new QPushButton("Update");
     filter = new QPushButton("Filter");
-    btnLay->addWidget(add);
-    btnLay->addWidget(remove);
-    btnLay->addWidget(update);
-    btnLay->addWidget(filter);
+    btnLay->addWidget(add, 0, 0);
+    btnLay->addWidget(remove, 0 ,1);
+    btnLay->addWidget(update, 0 ,2);
+    btnLay->addWidget(filter, 1, 1);
 
     leftLay->addWidget(btnWid);
 
@@ -254,7 +246,7 @@ void MainWindow::rightInit(){
 }
 
 void MainWindow::rightConnect() {
-    QObject::connect(this->showCoat, SIGNAL(clicked()), this, SLOT(shw()));
+    QObject::connect(this->showCoat, SIGNAL(clicked()), this, SLOT(showInBrowser()));
     QObject::connect(this->nextBtn, SIGNAL(clicked()), this, SLOT(next()));
     QObject::connect(this->buyBtn, SIGNAL(clicked()), this, SLOT(buy()));
     QObject::connect(this->total, SIGNAL(clicked()), this, SLOT(showTotal()));
@@ -292,7 +284,7 @@ void MainWindow::addToStore() {
 }
 
 
-void MainWindow::shw() {
+void MainWindow::showInBrowser() {
 
     Coat c = this->ctrl->getStore()->getCurrent();
     c.show();

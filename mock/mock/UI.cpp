@@ -84,8 +84,12 @@ void UI::add(){
             p.addAnalysis(m);
             this->contr.addPacient(p);}
         else {
-            Person p = this->contr.getPacient(name);
-            p.addAnalysis(m);
+            vector<Person> all = this->contr.getAll();
+            for( auto p=all.begin(); p!= all.end(); ++p){
+                if( (*p).getName() == name){
+                    (*p).addAnalysis(m);
+                }
+            }
         }
 
     }
@@ -120,6 +124,7 @@ void UI::getAnalysis(){
     string name;
     cout<<"Enter name: ";cin>>name;
     vector<Medical*> m = this->contr.getAnalysis(name);
+    cout<<"Nr elem"<<m.size();
     for ( auto item : m){
         item->toString();
     }
