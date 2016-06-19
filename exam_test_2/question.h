@@ -14,7 +14,7 @@ public:
     int getId() const { return id; }
     string getText() { return text; }
     string getAnswer() { return answer; }
-    int getScore() { return score; }
+    int getScore() const { return score; }
     string toString(){
         return to_string(id) + "," + text + "," + answer + "," + to_string(score);
     }

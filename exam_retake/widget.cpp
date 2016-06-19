@@ -1,14 +1,42 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include <string>
+#include <QString>
+#include <QtWidgets>
+#include <QGridLayout>
+#include <QFormLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QMessageBox>
 
-Widget::Widget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Widget)
+Widget::Widget(Controller& ctr, Programmer& pr, QWidget *parent) : ctr{ctr}, pr{pr},
+    QWidget(parent)
 {
-    ui->setupUi(this);
+    this->setUp();
+    QWidget::setWindowTitle(QString::fromStdString(pr.getName()));
+    populateList();
 }
 
-Widget::~Widget()
-{
-    delete ui;
+
+void Widget::setUp() {
+    resize(400, 550);
+
+    layout = new QVBoxLayout();
+    this->setLayout(layout);
+
+    list = new QListWidget();
+    layout->addWidget(list);
+
+}
+
+
+void Widget::populateList() {
+    this->list->clear();
+    vector<Task> all = ctr.getTasks();
+    for( auto t : all){
+        QString item = QString::fromStdString(t.getDesc() + " - " + t.getStatus());
+        this->list->addItem(item);
+    }
+    this->list->setCurrentRow(0);
+
 }

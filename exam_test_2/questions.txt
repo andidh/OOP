@@ -1,3 +1,5 @@
 2,2+2?,4,3
 4,Hi,hello,100
 1,Do dogs fly?,no,3
+3,Haha,nope,5
+10,How are you?,fine,20

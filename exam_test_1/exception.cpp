@@ -1,6 +1,6 @@
 #include "exception.h"
 
-Exception::Exception()
+Exception::Exception(const string& msg ) : message{msg}
 {
 
 }

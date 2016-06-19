@@ -4,7 +4,7 @@
 Controller::Controller(Repository* repo) : repo{repo} {}
 
 void Controller::addQuestion(int& id, string& text, string& answ, int& score){
-    for( auto q : this->getQuestions()){
+    for( auto q : this->getQuestionsPresenter()){
         if( q.getId() == id)
             throw Exception("The question is already added");
     }
@@ -17,7 +17,7 @@ void Controller::removeQuestion(int& id) {
 }
 
 int Controller::answerQuestion(int &ind, string &answ) {
-    Question q = this->getQuestions()[ind];
+    Question q = this->getQuestionsParticipant()[ind];
     if( q.getAnswer() == answ )
         return q.getScore();
     else

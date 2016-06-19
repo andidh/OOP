@@ -29,6 +29,8 @@ public:
     int getQuantity() const;
     string getLink() const;
     
+    void setSize(string& size) { this->size = size; }
+    
     //-----SETTERs------
     void setQuantity(int n);
 

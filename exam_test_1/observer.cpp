@@ -4,3 +4,5 @@ Observer::Observer()
 {
 
 }
+
+Observer::~Observer() {}

@@ -13,8 +13,26 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        gui.cpp
+        gui.cpp \
+    programmer.cpp \
+    task.cpp \
+    repository.cpp \
+    controller.cpp \
+    exception.cpp \
+    observer.cpp \
+    subject.cpp
 
-HEADERS  += gui.h
+HEADERS  += gui.h \
+    programmer.h \
+    task.h \
+    repository.h \
+    controller.h \
+    exception.h \
+    observer.h \
+    subject.h
 
 FORMS    += gui.ui
+
+DISTFILES += \
+    tasks.txt \
+    progs.txt

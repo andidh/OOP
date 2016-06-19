@@ -23,6 +23,21 @@ void Repository::removeQuestion(int &id){
     notify();
 }
 
+vector<Question> Repository::getQuestionsParticipant() {
+    vector<Question> all = this->quest;
+    sort(all.begin(), all.end(), [](const Question& a, const Question& b) {
+         return a.getScore() > b.getScore(); });
+    return all;
+}
+
+vector<Question> Repository::getQuestionsPresenter() {
+    vector<Question> all = this->quest;
+    sort(all.begin(), all.end(), [](const Question& a, const Question& b) {
+         return a.getId() < b.getId(); });
+    return all;
+
+}
+
 //------------------------------------------------
 
 void Repository::loadFromFile() {

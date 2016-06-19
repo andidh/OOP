@@ -1,11 +1,13 @@
-#ifndef EXCEPTION_H
-#define EXCEPTION_H
+#pragma once
+#include<exception>
+#include "programmer.h"
 
-
-class Exception
+class Exception : public exception
 {
+    string message;
 public:
-    Exception();
+
+    Exception(const string& msg);
+    const char* what() { return this->message.c_str(); }
 };
 
-#endif // EXCEPTION_H

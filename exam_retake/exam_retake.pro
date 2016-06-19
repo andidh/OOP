@@ -13,8 +13,26 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    repository.cpp \
+    controller.cpp \
+    exception.cpp \
+    programmer.cpp \
+    task.cpp \
+    subject.cpp \
+    observer.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    repository.h \
+    controller.h \
+    exception.h \
+    programmer.h \
+    task.h \
+    subject.h \
+    observer.h
 
 FORMS    += widget.ui
+
+DISTFILES += \
+    progs.txt \
+    tasks.txt

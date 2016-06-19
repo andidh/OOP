@@ -1,6 +1,4 @@
 #include "programmer.h"
+#include<istream>
 
-Programmer::Programmer()
-{
-
-}
+Programmer::Programmer(const string& name, const int& id) : name{name}, id{id} {}

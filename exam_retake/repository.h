@@ -1,11 +1,31 @@
-#ifndef REPOSITORY_H
-#define REPOSITORY_H
+#pragma once
+#include "programmer.h"
+#include "task.h"
+#include "subject.h"
 
 
-class Repository
+class Repository : public Subject
 {
+
+    vector<Programmer> prog;
+    vector<Task> task;
+
 public:
-    Repository();
+    Repository(string file);
+    ~Repository();
+
+    void addTask(Task& t);
+    void removeTask(const Task& t);
+    void modifyTask(const int& oldID, const int& newID, const string& progress);
+
+    vector<Task> getTasks() { return this->task; }
+    vector<Programmer> getProgrammers() { return this->prog; }
+
+private:
+
+    void loadFromFile(string file);
+    void writeToFile();
+    void sortData();
+
 };
 
-#endif // REPOSITORY_H

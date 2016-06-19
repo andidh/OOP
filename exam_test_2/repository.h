@@ -16,7 +16,9 @@ public:
 
     void addQuestion(Question& q);
     void removeQuestion(int& id);
-    vector<Question> getQuestions() { return this->quest; }
+    vector<Question> getQuestionsParticipant();
+    vector<Question> getQuestionsPresenter();
+
     vector<Participant> getParticipants() { return this->part; }
 
 

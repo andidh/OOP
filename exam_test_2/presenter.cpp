@@ -53,7 +53,7 @@ void Presenter::connectAll(){
 void Presenter::populateList(){
     this->list->clear();
 
-    for(auto it : ctr->getQuestions()){
+    for(auto it : ctr->getQuestionsPresenter()){
         QString item = QString::fromStdString(to_string(it.getId()) + " - " + it.getText() + " - " + it.getAnswer() + " - " + to_string(it.getScore()));
         list->addItem(item);
     }
@@ -85,7 +85,7 @@ void Presenter::addQuestion() {
 
 void Presenter::removeQuestion() {
     int index = this->getIndex();
-    Question q = this->ctr->getQuestions()[index];
+    Question q = this->ctr->getQuestionsPresenter()[index];
     int id = q.getId();
     this->ctr->removeQuestion(id);
     this->populateList();

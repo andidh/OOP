@@ -52,7 +52,7 @@ void GUI::connectAll() {
 void GUI::populateList(){
     this->list->clear();
 
-    for( auto q : ctr->getQuestions()){
+    for( auto q : ctr->getQuestionsParticipant()){
         QString item = QString::fromStdString(to_string(q.getId()) + " - " + q.getText() + " - " + to_string(q.getScore()));
         this->list->addItem(item);
     }
@@ -81,5 +81,6 @@ void GUI::answerQuestion(){
         QMessageBox::critical(this,"ERROR", "Wrong answer");
     }
     scoreLabel->setText(QString::fromStdString(to_string(part.getScore())));
+    answerLabel->clear();
 
 }

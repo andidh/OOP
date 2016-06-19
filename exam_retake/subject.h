@@ -1,11 +1,17 @@
-#ifndef SUBJECT_H
-#define SUBJECT_H
+#pragma once
+#include<vector>
+#include "observer.h"
 
+using namespace std;
 
 class Subject
 {
+    vector<Observer*> list;
 public:
     Subject();
+
+    void addObserver(Observer* obs);
+
+    void notify();
 };
 
-#endif // SUBJECT_H

@@ -1,11 +1,17 @@
-#ifndef OBSERVABLE_H
-#define OBSERVABLE_H
+#pragma once
+#include<vector>
+#include "observer.h"
 
+using namespace std;
 
-class Observable
+class Subject
 {
+    vector<Observer*> list;
 public:
-    Observable();
+    Subject();
+
+    void addObserver(Observer* obs);
+
+    void notify();
 };
 
-#endif // OBSERVABLE_H
